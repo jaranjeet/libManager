@@ -1,0 +1,17 @@
+<div class="my-container theme-showcase" role="main">
+	<div class="my-jumbotron">
+		<h4>Add New Borrowing</h4>
+		<%= form_with scope: :borrowing, url: borrowings_path, local: true do |form| %>
+		<table class="table table-striped">
+			
+			<tr><td><%= form.label :Student_id %></td><td><%= form.collection_select(:Student_id, Student.all, :id, :name, {:prompt => true}, {class: "newdropdown-menu", id: "newdropdown"}) %></td></tr>
+			<tr><td><%= form.label :Book_id %></td><td><%= form.collection_select(:Book_id, Book.all, :id, :name, {:prompt => true}, {class: "newdropdown-menu", id: "newdropdown"}) %></td></tr>
+			<tr><td></td><td><%= form.submit 'Issue', :class=>'btn btn-success' %></td></tr>
+			<tr><td></td><td></td></tr>
+		</table>
+		<p id="notice"><%= @msg %></p>
+		<% end %>
+		<%= link_to 'Home', root_path %> |
+		<%= link_to 'Back', borrowings_path %>
+	</div>
+</div>

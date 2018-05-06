@@ -1,0 +1,13 @@
+<div class="my-container theme-showcase" role="main">
+	<div class="my-jumbotron">
+		<h4>Show Borrowings</h4>
+		
+		<table class="table table-striped">
+			<tr><td>Student Id</td><td><%= @borrowing.Student_id %></td></tr>
+			<tr><td>Book Id</td><td><%= @borrowing.Book_id %></td></tr>
+			<tr><td><%= @book.name %></td><td><%= @student.name %></td></tr>
+		</table>
+		<%= link_to 'Home', root_path %> |
+		<%= link_to 'Back', borrowings_path %>
+	</div>
+</div>

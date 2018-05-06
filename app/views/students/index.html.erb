@@ -1,0 +1,34 @@
+<div class="my-container theme-showcase" role="main">
+  <div class="my-jumbotron">
+	<h4>Showing All Students</h4>
+	<table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Roll Number</th>
+			<th>Name of Student</th>
+			<th>Class</th>
+			<th>Phone Number</th>
+			<th>Email</th>
+			<th>Show</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+		<% @students.each do |student| %>
+	 	<tr>
+	 		<td><%= student.id %></td>
+	 		<td><%= student.roll_no %></td>
+		 	<td><%= student.name %></td>
+		 	<td><%= student.class_%></td>
+	 		<td><%= student.phone %></td>
+	 		<td><%= student.email %></td>
+	 		<td><%= link_to 'Show', student_path(student) %>
+	 		<td><%= link_to 'Edit', edit_student_path(student)%></td>
+	 		<td><%= link_to 'Delete', student_path(student), method: :delete, data:{confirm: 'Are you sure?'} %></td>
+	 	</tr>
+		<% end %>
+	</table>
+	<%= link_to 'Home', welcome_index_path %>  |
+	<%= link_to 'Add New Student', new_student_path %>
+	
+   </div>
+</td>

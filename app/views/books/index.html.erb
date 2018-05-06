@@ -1,0 +1,38 @@
+
+<div class="my-container theme-showcase" role="main">
+  <div class="my-jumbotron">
+	<h4>Showing All Books</h4>
+	<table class="table table-striped" style="width: 100%;">
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Author</th>
+			<th>Pages</th>	
+			<th>Price</th>
+			<th>Subject</th>
+			<th>Borrowed</th>
+			<th>Show</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+		<% @books.each do |book| %>
+			<tr>
+				<td><%= book.id %></td>
+				<td><%= book.name %></td>
+				<td><%= book.author %></td>
+				<td><%= book.pages %></td>
+				<td><%= book.price %> &#8377;</td>
+				<td><%= book.subject %></td>
+				<td><%= book.isBorrowed %></td>
+				<td><%= link_to 'Show', book_path(book) %></td>
+				<td><%= link_to 'Edit', edit_book_path(book) %></td>
+				<td><%= link_to 'Delete',book_path(book), method: :delete, data:{confirm: 'Are you sure?'} %></td>
+			</tr>
+		<% end %>
+			
+	</table>
+	<%= link_to 'Home', root_path %> |
+	<%= link_to 'Add New Book', new_book_path %>
+</div>
+</div>
+</div>

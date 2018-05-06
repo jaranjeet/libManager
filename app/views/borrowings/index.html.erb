@@ -1,0 +1,32 @@
+<div class="my-container theme-showcase" role="main">
+	<div class="my-jumbotron">
+		<h4>Showing All Borrowings</h4>
+		<table class="table table-striped">
+			<tr>
+				<th>Id</th>
+				<th>Student Name</th>
+				<th>Book Name</th>
+				<th>Is Returned</th>
+				<th>Issued On</th>
+				<th>Show</th>
+				<th>Return Book</th>
+			</tr>
+			<% @borrowings.each do |borrowing| %>
+
+			<tr>
+				<td><%= @id = borrowing.id %></td>
+				<td><%= Student.find(borrowing.Student_id).name %></td>
+				<td><%= Book.find(borrowing.Book_id).name %></td>
+				<td><%= borrowing.isReturned %> </td>
+				<td><%= borrowing.created_at %></td>
+				<td><%= link_to 'Show', borrowing_path(borrowing) %></td>
+				<td><%= link_to "Return", {controller:"borrowings", action:"returnBook", my_param: borrowing.id, id: borrowing.Book_id}, id: borrowing.id %></td>
+
+			</tr>
+			<% end %>
+		</table>
+		<%= @msg %>
+		<%= link_to 'Home', root_path %> |
+		<%= link_to 'Issue a Book', new_borrowing_path %>
+	</div>
+</div>

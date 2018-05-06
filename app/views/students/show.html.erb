@@ -1,0 +1,15 @@
+<div class="my-container theme-showcase" role="main">
+  <div class="my-jumbotron">
+  <h4>Showing Student Details</h4>
+	<table class="table table-striped">
+		<tr><td>Roll Number</td><td><b><%= @student.roll_no %></b></td></tr>
+		<tr><td>Name</td><td><b><%= @student.name %></b></td></tr>
+		<tr><td>Class</td><td><b><%= @student.class_%></b></td></tr>
+		<tr><td>Phone</td><td><b><%= @student.phone%></b></td></tr>
+		<tr><td>Email</td><td><b><%= @student.email%></b></td></tr>
+	</table>
+	<%= link_to 'Home', root_path %> |
+	<%= link_to 'Back', students_path %> | 
+	<%= link_to 'Add New Student', new_student_path %>
+  </div>
+</div>

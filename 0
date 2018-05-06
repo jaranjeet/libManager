@@ -1,0 +1,2 @@
+      invoke  active_record
+    conflict    db/migrate/20180505133138_change_is_borrowed_in_books.rb

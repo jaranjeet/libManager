@@ -1,0 +1,15 @@
+<div style="margin-left: 30%;margin-top: 10%;">
+	<%= form_with scope: :student, url: students_path, local: true do |form| %>
+		<h3>Add Student</h3>
+		<table class="table table-striped" style="width:50%">
+			<tr><td><%= form.label :roll_no %></td><td><%= form.text_field :roll_no %></td></tr>
+			<tr><td><%= form.label :name %></td><td><%= form.text_field :name %></td></tr>
+			<tr><td><%= form.label :class_ %></td><td><%= form.text_field :class_ %></td></tr>
+			<tr><td><%= form.label :phone %></td><td><%= form.text_field :phone %></td></tr>
+			<tr><td><%= form.label :email %></td><td><%= form.text_field :email %></td></tr> 
+			<tr><td></td><td><%= form.submit 'Save', :class=> 'btn btn-success'%></td></tr>
+		</table>
+	<% end %>
+	<%= link_to 'Home', welcome_index_path %>  |  
+	<%= link_to 'Back', students_path %>
+</div>

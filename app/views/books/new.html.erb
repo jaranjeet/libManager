@@ -1,0 +1,17 @@
+<div class="my-container theme-showcase" role="main">
+	<div class="my-jumbotron">
+	<h3>Add New Books</h3>
+		<%= form_with scope: :book, url: books_path, local: true do |form| %>
+			<table class="table table-striped" >
+				<tr><td><%= form.label :name %></td><td><%= form.text_field :name %></td></tr>
+				<tr><td><%= form.label :author %></td><td><%= form.text_field :author %></td></tr>
+				<tr><td><%= form.label :pages %></td><td><%= form.text_field :pages %></td></tr>
+				<tr><td><%= form.label :price %></td><td><%= form.text_field :price %></td></tr>
+				<tr><td><%= form.label :subject %></td><td><%= form.select(:subject, options_for_select([['Select','select'],['Physics', 'phy'], ['Chemistry', 'chem'], ['Mathematics','math']])) %></td></tr>
+				<tr><td></td><td><%= form.submit 'Submit', :class => 'btn btn-success' %></td></tr>
+			</table>
+			<%= link_to 'Home', root_path %> | 
+			<%= link_to 'Back', books_path %>
+		<% end %>	
+</div>
+</div>

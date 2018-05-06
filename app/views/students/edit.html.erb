@@ -1,0 +1,17 @@
+<div class="my-container theme-showcase" role="main">
+  <div class="my-jumbotron">
+	<h4>Edit Students</h4>
+	<%= form_with(model: @student, local:true) do |form | %>
+		<table class="table table-striped">
+			<tr><td><%= form.label :roll_no %></td><td><%= form.text_field :roll_no %></td></tr>
+			<tr><td><%= form.label :name %></td><td><%= form.text_field :name %></td></tr>
+			<tr><td><%= form.label :class_ %></td><td><%= form.text_field :class_ %></td></tr>
+			<tr><td><%= form.label :phone %></td><td><%= form.text_field :phone %></td></tr>
+			<tr><td><%= form.label :email %></td><td><%= form.text_field :email %></td></tr>
+			<tr><td></td><td><%= form.submit 'Update', :class=>'btn btn-success' %></td></tr>
+		</table>
+		<%= link_to 'Home', root_path %> |
+		<%=  link_to 'Back', students_path %>
+	<% end %>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<div class="my-container theme-showcase" role="main">
+	<div class="my-jumbotron">
+	<h3>Showing Book Details</h3>
+	<table class="table table-striped">
+		<tr><td>Name</td><td><b><%= @book.name %></td></b></tr>
+		<tr><td>Author</td><td><b><%= @book.author %></td></b></tr>
+		<tr><td>Pages</td><td><b><%= @book.pages %></td></b></tr>
+		<tr><td>Price</td><td><b><%= @book.price %> &#8377; </b></td></tr>
+		<tr><td>Subject</td><td><b><%= @book.subject %></b></td></tr>
+	</table>
+	<%= link_to 'Home', root_path %> |
+	<%= link_to 'Back', books_path %> |
+	<%= link_to 'Add New Book', new_book_path %>
+	</div>
+</div>

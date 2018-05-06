@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  issued_on: 2018-05-06 08:41:04
+  Student: one
+  Book: one
+
+two:
+  issued_on: 2018-05-06 08:41:04
+  Student: two
+  Book: two
